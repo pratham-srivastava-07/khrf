@@ -1,0 +1,4 @@
+# GitHub language statistics (Linguist): count only TypeScript and Python.
+* linguist-detectable=false
+*.ts linguist-detectable=true
+*.py linguist-detectable=true

@@ -1,0 +1,6 @@
+# Runtime dependencies for the Vercel Python function (api/index.py).
+# Keep to what the API needs at runtime; dev tools live in backend/requirements.txt.
+fastapi==0.115.6
+pandas==2.2.3
+pyarrow==18.1.0
+pydantic==2.10.4

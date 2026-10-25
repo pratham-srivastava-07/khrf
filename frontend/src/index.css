@@ -1,0 +1,91 @@
+@import 'tailwindcss';
+
+/* Design tokens from docs/ui-ux-design-brief.md. Use these, never raw hex, in components. */
+@theme {
+  --color-canvas: #f7f8fa;
+  --color-surface: #ffffff;
+  --color-line: #e3e6ec;
+  --color-ink: #0f172a;
+  --color-ink-muted: #5b6577;
+
+  --color-forecast: #0e7c86;
+  --color-forecast-soft: #e7f3f4;
+  --color-actual: #1e293b;
+  --color-over: #d97706;
+  --color-under: #2563eb;
+  --color-alert: #dc2626;
+  --color-success: #15803d;
+
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  /* Type scale: 12 / 14 / 16 / 20 / 28 / 36 */
+  --text-caption: 12px;
+  --text-body: 14px;
+  --text-lead: 16px;
+  --text-heading: 20px;
+  --text-title: 28px;
+  --text-metric: 36px;
+
+  --radius-card: 12px;
+  --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.06);
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --animate-shimmer: shimmer 1.4s ease-in-out infinite;
+  @keyframes shimmer {
+    0% {
+      background-position: 100% 0;
+    }
+    100% {
+      background-position: -100% 0;
+    }
+  }
+}
+
+@layer base {
+  html {
+    background: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-forecast);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .num {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Landing hero: each line rises in once, staggered with animation-delay. */
+  .hero-enter {
+    animation: hero-enter 600ms var(--ease-out-soft) both;
+  }
+}
+
+@keyframes hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

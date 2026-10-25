@@ -1,0 +1,17 @@
+{
+  "data_start": "2026-01-01",
+  "data_end": "2026-01-31",
+  "default_cutoff_rule": "D-1 09:00 Europe/London",
+  "horizons": [
+    4,
+    12,
+    24,
+    36,
+    47
+  ],
+  "ingested_at": "2026-10-25T11:40:08+00:00",
+  "row_counts": {
+    "actuals": 1584,
+    "forecasts": 17618
+  }
+}

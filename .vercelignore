@@ -1,0 +1,7 @@
+# Keep local environments and build output out of CLI uploads.
+**/node_modules
+**/.venv
+**/__pycache__
+frontend/dist
+.pytest_cache
+.ruff_cache

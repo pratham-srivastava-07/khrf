@@ -1,0 +1,7 @@
+# Context is the repo root; send only the frontend sources, never local node_modules.
+*
+!frontend/
+frontend/node_modules
+frontend/dist
+# Local env would point the proxy at localhost; compose sets API_PROXY_TARGET instead.
+frontend/.env
